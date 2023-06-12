@@ -20,8 +20,11 @@
 
     <main>
       <section id="home" class="home">
-        <h1>Our Relationship</h1>
-        <h2>A journey of love and togetherness</h2>
+        <div class="couple"></div>
+        <div class="content">
+          <h1>Our Relationship</h1>
+          <h2>A journey of love and togetherness</h2>
+        </div>
       </section>
 
       <section id="about" class="about">
@@ -42,7 +45,7 @@
           <img src="https://source.unsplash.com/random/400x400" alt="Couple Photo">
         </div>
       </section>
-
+      
       <section id="love-story" class="love-story">
         <h2 class="section-title">Our Love Story</h2>
         <div class="timeline">
@@ -85,5 +88,18 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+  var couple = document.querySelector(".couple");
+
+  window.addEventListener("scroll", function() {
+    var offset = window.pageYOffset;
+    couple.style.backgroundPositionY = offset * 0.7 + "px"; // Adjust the factor to control the parallax speed
+    var blurValue = offset * 0.02; // Adjust the factor to control the blur intensity
+    couple.style.filter = `blur(${blurValue}px)`;
+  });
+});
+
+    </script>
   </body>
 </html>
